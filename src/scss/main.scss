@@ -1,3 +1,16 @@
-*{
-    color: red;
-}
+
+/*
+*
+    ### --- SCSS to CSS Loader --- ###
+
+     - @Entry point:   SCSS/main.scss
+     - @Output:   src/main.css
+     - @Run: npm run scss
+
+     @Author: Luke ==> ¯\_(ツ)_/¯
+     
+*
+*/
+
+@import "/node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import './base/reset.scss';
