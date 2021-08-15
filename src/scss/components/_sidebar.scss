@@ -1,0 +1,26 @@
+aside.sidebar{
+    background-color: $dark;
+    height: 100vh;
+    width: 70px;
+    border-top-right-radius: $primary-radius;
+    border-bottom-right-radius: $primary-radius;
+    box-shadow: $main-shadow;
+    &>*{
+        .active{
+            background-color: red;
+        }
+    }
+
+    ul.nav{
+    
+
+        li.nav-item{
+           
+            width: 100%;
+            padding: .5rem 0;
+            a{
+               
+            }
+        }
+    }
+}

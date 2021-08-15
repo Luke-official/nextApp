@@ -1,0 +1,22 @@
+.dropdown{
+
+    &.dropdown-user{
+
+        button.dropdown-toggle{
+            background-color: transparent;
+            box-shadow: none;
+            border: none;
+
+            &:after{
+                content: none;
+            }
+        }
+
+        ul.dropdown-menu{
+            position: absolute;
+            inset: auto auto 0px 0px;
+            margin: 0px;
+            transform: translate(12px, -61px)
+        }
+    }
+}

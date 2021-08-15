@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Form from 'react-bootstrap/Form'
 
 const themes = {
@@ -9,9 +10,7 @@ const ChangeTheme = () =>{
 
     const [theme, setTheme] = useState(0);
 
-    const getTheme = () =>{
-        setTheme()
-    }
+
 
     return(
         <Form>
@@ -19,7 +18,6 @@ const ChangeTheme = () =>{
                 type="switch"
                 id="theme-switch"
                 label="Change Theme"
-                onChange={getTheme}
             />
         </Form>
     );

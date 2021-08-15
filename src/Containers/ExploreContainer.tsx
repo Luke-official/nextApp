@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Container } from "react-bootstrap";
-import Select from "react-select";
 import makeAnimated from "react-select/animated";
+import Select from "react-select/src/Select";
 
 const animatedComponents = makeAnimated();
 
@@ -15,12 +15,13 @@ const selectItems: IselectOption[] = [
     { value: "vanilla", label: "Vanilla" },
 ];
 
-const Home: React.FC = () => {
+const ExploreContainer: React.FC = () => {
+
     const [selectedOption, setSelectedOption] = useState([] as IselectOption[]);
 
-    return (
+    return(
         <>
-            <Container>
+            {/* <Container>
                 <div>Home</div>
                 <Select
                     onChange={(e) => {
@@ -45,9 +46,11 @@ const Home: React.FC = () => {
                     </div>
                     : <label>No Items selected</label>
                 }
-            </Container>
-        </>
+            </Container> */}
+           
+         </>
     );
-};
 
-export default Home;
+}
+
+export default ExploreContainer

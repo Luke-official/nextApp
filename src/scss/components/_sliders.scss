@@ -1,0 +1,12 @@
+.swiper-container{
+
+    &.home-swiper{
+        height: 200px;
+        border-radius: $primary-radius;
+        
+        .swiper-slide{
+            background-color: $dark-component;    
+        }
+    }
+    
+}

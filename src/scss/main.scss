@@ -3,14 +3,33 @@
 *
     ### --- SCSS to CSS Loader --- ###
 
-     - @Entry point:   SCSS/main.scss
+     - @Entry point:   SCSS/main
      - @Output:   src/main.css
      - @Run: npm run scss
 
      @Author: Luke ==> ¯\_(ツ)_/¯
-     
 *
 */
 
+
+
+/* Dependencies */
 @import "/node_modules/bootstrap/dist/css/bootstrap.min.css";
-@import './base/reset.scss';
+
+/* Utils */
+@import './utils/media-queries';
+
+/* Base */
+@import './base/variables';
+@import './base/fonts';
+@import './base/reset';
+
+
+/* Components */
+@import './components/cards';
+@import './components/containers';
+@import './components/navbar';
+@import './components/sidebar';
+@import './components/dropdown';
+@import './components/form';
+@import './components/sliders.scss';

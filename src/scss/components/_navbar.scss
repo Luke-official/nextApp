@@ -1,0 +1,11 @@
+.offcanvas{
+    z-index: 1050;
+}
+
+.navbar-toggler{
+    border: none;
+    
+    &:focus{
+        box-shadow: none;
+    }
+}
