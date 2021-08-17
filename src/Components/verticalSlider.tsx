@@ -24,7 +24,7 @@ interface Slide {
 }
 
 
-const VerticalSlider = () => {
+const VerticalSlider: React.FC = () => {
 
         const slides = [
 
@@ -51,8 +51,8 @@ const VerticalSlider = () => {
             <Swiper direction={'vertical'} pagination={{
                 "clickable": true
             }} className="card home-swiper mt-5">
-               {slides.map(slide => (
-                  <SwiperSlide>
+               {slides.map((slide,i) => (
+                  <SwiperSlide key={i}>
                       {slide.title}
                   </SwiperSlide>
                ))}
