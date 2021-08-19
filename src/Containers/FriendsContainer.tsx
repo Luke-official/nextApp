@@ -1,7 +1,12 @@
+
+
 const FriendsContainer: React.FC = () => {
 
     return(
+        <>
         <div>Friends</div>
+     
+        </>
     );
 
 }

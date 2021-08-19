@@ -1,15 +1,47 @@
+$input-height: 42px;
+$input-radius: 36px;
 
+form {
+    &.form-search {
+        position: relative;
+        width: 40%;
+        min-width: min-content;
+        margin-right: auto;
+        background-color: $dark;
+        border-radius: 36px;
 
-div.form-container{
-    background-color: $dark;
-    border-radius: 36px;
+        div.input-row {
+            width: 100%;
 
-    &.form-search{
+            input.searchbar {
+                width: inherit;
+                color: $text-white;
+                padding: 0;
+                height: $input-height;
+                padding-inline-start: 1rem;
+                background-color: $dark-component;
+                border-radius: $input-radius;
+                border: transparent;
+            }
 
-        input.searchbar{
-            border-radius: 36px;
-            border: transparent;
-            background-color: #3d3d3d;
+            button {
+                position: absolute;
+                @include center-vertical(absolute);
+                right: 0;
+                height: $input-height;
+                padding: 0;
+                padding-inline-end: 1rem;
+                background-color: $dark-component;
+                border: none;
+                border-top-right-radius: $input-radius;
+                border-bottom-right-radius: $input-radius;
+
+                &:focus,
+                &:focus-visible {
+                    outline: none;
+                    box-shadow: none;
+                }
+            }
         }
     }
 }

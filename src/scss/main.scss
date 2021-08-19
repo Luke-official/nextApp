@@ -1,15 +1,21 @@
 
 /*
 *
-    ### --- SCSS to CSS Loader --- ###
+*
+    _____,-----------------------,_____
+    \    |    STYLE WITH SCSS    |    /
+    /____|-----------------------|____\
 
-     - @Entry point:   SCSS/main
-     - @Output:   src/main.css
-     - @Run: npm run scss
+        ### --- SCSS Loader --- ###
 
-     @Author: Luke ==> ¯\_(ツ)_/¯
+        - @Entry point:   SCSS/main
+        - @Output:   src/main.css
+        - @Run: npm run scss
+
+    @Author: Luke ==> ¯\_(ツ)_/¯
 *
 */
+
 
 
 
@@ -18,6 +24,11 @@
 
 /* Utils */
 @import './utils/media-queries';
+@import './utils/typography';
+@import './utils/flexbox';
+@import './utils/transition';
+@import './utils/centering';
+
 
 /* Base */
 @import './base/variables';
@@ -29,7 +40,8 @@
 @import './components/cards';
 @import './components/containers';
 @import './components/navbar';
+@import './components/buttons';
 @import './components/sidebar';
 @import './components/dropdown';
 @import './components/form';
-@import './components/sliders.scss';
+@import './components/sliders';

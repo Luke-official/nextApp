@@ -6,10 +6,20 @@ import { ReactComponent as MovieLogo } from "../media/icons/movie_white_24dp.svg
 import { ReactComponent as GameLogo } from "../media/icons/sports_esports_white_24dp.svg";
 import { ReactComponent as FriendsLogo } from "../media/icons/people_white_24dp.svg";
 import { ReactComponent as ExploreLogo } from "../media/icons/travel_explore_white_24dp.svg";
+import { ReactComponent as SettingsIcon } from "../media/icons/settings_white_24dp.svg";
 import { useState } from "react";
-
+import { useDispatch} from "react-redux";
+import { setNotification } from "../Redux/Action/notificationActions";
 
 const Sidebar: React.FC = () => {
+
+  const dispatch = useDispatch();
+  const [counter, setCounter] = useState(1);
+
+  const btnClickHandler = (type: 'success' | 'danger' | 'warning') => {
+    dispatch(setNotification({ message: `Notification message ${counter}`, type }));
+    setCounter(prevCounter => prevCounter + 1);
+  }
 
   return (
     <aside className="sidebar">
@@ -112,27 +122,26 @@ const Sidebar: React.FC = () => {
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            <img
+            <SettingsIcon/>
+            {/* <img
               src="https://github.com/mdo.png"
               alt="User pic"
               className="rounded-circle"
               width="24"
               height="24"
-            />
+            /> */}
           </button>
           <ul
             className="dropdown-menu text-small shadow"
-            aria-labelledby="userDropdown"
-          >
+            aria-labelledby="userDropdown">
             <li>
-              <a className="dropdown-item" href="##">
-                Settings
-              </a>
+              <button className="dropdown-item" onClick={() => btnClickHandler('success')}>Add success notification</button>
             </li>
             <li>
-              <a className="dropdown-item" href="##">
-                Profile
-              </a>
+              <button className="dropdown-item" onClick={() => btnClickHandler('warning')}>Add warning notification</button>
+            </li>
+            <li>
+              <button className="dropdown-item" onClick={() => btnClickHandler('danger')}>Add danger notification</button>
             </li>
             <li>
               <hr className="dropdown-divider" />

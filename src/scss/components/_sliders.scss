@@ -1,12 +1,25 @@
-.swiper-container{
-
-    &.home-swiper{
+.swiper-container {
+    &.home-swiper {
         height: 200px;
         border-radius: $primary-radius;
-        
-        .swiper-slide{
-            background-color: $dark-component;    
+        border: none;
+
+        .swiper-slide {
+            background-color: $dark-component;
+            background-size: cover;
+
+            .slide-footer {
+                color: $text-white;
+                font-weight: 600;
+                font-style: italic;
+                line-height: 2rem;
+                letter-spacing: 0.141em;
+
+                button{
+                    @extend .slide-footer;
+                    line-height: 1.8rem;
+                } 
+            }
         }
     }
-    
 }

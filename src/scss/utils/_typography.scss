@@ -1,0 +1,47 @@
+
+// FLUID TYPE  
+//
+@mixin fluid-type($min-font-size: 16px, $max-font-size: 21px, $lower-range: 420px, $upper-range: 900px) {
+    $font-16: 16px;
+    $font-18: 18px;
+    $font-20: 20px;
+    $font-22: 22px;
+    $font-24: 24px;
+  
+    font-size: calc(#{$min-font-size} + #{(($max-font-size / ($max-font-size * 0 + 1)) - ($min-font-size / ($min-font-size * 0 + 1)))} * ((100vw - #{$lower-range}) / #{(($upper-range / ($upper-range * 0 + 1)) - ($lower-range / ($lower-range * 0 + 1)))}));
+  
+    @media screen and (max-width: $lower-range) {
+      font-size: $min-font-size;
+    }
+  
+    @media screen and (min-width: $upper-range) {
+      font-size: $max-font-size;
+    }
+  }
+
+
+// LINE ELLIPSIS 
+// 
+// @param $lines = num of lines of text
+//
+// For single line ellipsis you have to pass null.
+//
+// Note: Line clamp is not supported in internet explorer.
+// Don't use if you are supporting IE 11 or below.
+//
+@mixin text-shorten($lines) {
+  @if $lines != null {
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    /* autoprefixer: off */
+    -webkit-box-orient: vertical;
+    /* autoprefixer: on */ 
+    overflow:hidden;
+ }
+ @else{
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    overflow:hidden;
+    display:block;
+ }
+}

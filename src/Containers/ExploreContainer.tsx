@@ -1,23 +1,22 @@
-import { useState } from "react";
-import { Container } from "react-bootstrap";
-import makeAnimated from "react-select/animated";
-import Select from "react-select/src/Select";
 
-const animatedComponents = makeAnimated();
+//import makeAnimated from "react-select/animated";
+// import Select from "react-select/src/Select";
 
-interface IselectOption {
-    value: string;
-    label: string;
-}
-const selectItems: IselectOption[] = [
-    { value: "chocolate", label: "Chocolate" },
-    { value: "strawberry", label: "Strawberry" },
-    { value: "vanilla", label: "Vanilla" },
-];
+// const animatedComponents = makeAnimated();
+
+// interface IselectOption {
+//     value: string;
+//     label: string;
+// }
+// const selectItems: IselectOption[] = [
+//     { value: "chocolate", label: "Chocolate" },
+//     { value: "strawberry", label: "Strawberry" },
+//     { value: "vanilla", label: "Vanilla" },
+// ];
 
 const ExploreContainer: React.FC = () => {
 
-    const [selectedOption, setSelectedOption] = useState([] as IselectOption[]);
+    // const [selectedOption, setSelectedOption] = useState([] as IselectOption[]);
 
     return(
         <>

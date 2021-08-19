@@ -1,66 +1,62 @@
-import { useState } from "react";
-import { Offcanvas } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import ChangeTheme from "./ChangeTheme";
+import { ReactComponent as NotifyIcon } from "../media/icons/notifications_white_24dp.svg";
+import { RootState } from "../Redux/store";
+import { SearchBar } from "./SearchBar"
+import Notification from "./Notification";
+import { useSelector } from "react-redux";
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
 
-  const authenticated = true;
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const toggleShow = () => setShow(s => !s);
+  const { message, type } = useSelector((state: RootState) => state.notification);
 
   return (
-    <>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div className="container-fluid">
-          <Link to="/" className="navbar-brand">
-            Brand
-          </Link>
-          <button
-            onClick={toggleShow}
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasNavbar"
-            aria-controls="offcanvasNavbar"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <Offcanvas
-            show={show}
-            onHide={handleClose}
-            placement="start"
-            scroll={false}
-            backdrop={true}
-            closeLabel
-            >
-            <Offcanvas.Header closeButton>
-              <Offcanvas.Title>
-                <Link to="/" className="navbar-brand">
-                  Brand
-                </Link>
-              </Offcanvas.Title>
-            </Offcanvas.Header>
-            <Offcanvas.Body>
-              <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                <li className="nav-item">
-                  <Link className="nav-link" to="/about">
-                    About
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/contact">
-                    Contact
-                  </Link>
-                </li>
-              </ul>
-            </Offcanvas.Body>
-          </Offcanvas>
+    <header className="p-2">
+      <div className="container-fluid d-grid gap-3 align-items-center">
+        <div className="d-flex align-items-center justify-content-start">
+         <SearchBar/>
+         <div className="dropdown dropdown-user d-flex justify-content-center align-items-center">
+            <button className="btn bg-transparent" id="notificationsDropdown" data-bs-auto-close="true"
+              data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <NotifyIcon/>
+              
+            </button>
+            <ul className="dropdown-menu shadow" aria-labelledby="notificationsDropdown">
+              {}
+              <li className="">
+                  {message}
+                  <Notification message={message} type={type}/>
+              </li>
+            </ul>
+          </div>
+          <div className="dropdown dropdown-user d-flex justify-content-center align-items-center">
+            <button id="userDropdown" className="d-flex flex-column justify-content-center align-items-center dropdown-toggle p-3"
+              data-bs-auto-close="true"
+              data-bs-toggle="dropdown"
+              aria-expanded="false">
+                <img src="https://github.com/mdo.png" alt="User pic" className="rounded-circle" width="24" height="24"/>
+            </button>
+            <ul className="dropdown-menu text-small shadow" aria-labelledby="userDropdown">
+              <li>
+                <a className="dropdown-item" href="##">
+                  Settings
+                </a>
+              </li>
+              <li>
+                <a className="dropdown-item" href="##">
+                  Profile
+                </a>
+              </li>
+              <li>
+                <hr className="dropdown-divider" />
+              </li>
+              <li>
+                <button className="dropdown-item btn-danger btn">Sign out</button>
+              </li>
+            </ul>
+          </div>
         </div>
-      </nav>
-    </>
+      </div>
+    </header>
   );
 };
 

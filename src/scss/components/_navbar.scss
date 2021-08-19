@@ -1,11 +1,14 @@
-.offcanvas{
-    z-index: 1050;
-}
+.header{
+    background-color: $dark;
+    z-index: 30;
+    width: 100%;
+    height: 60px;
 
-.navbar-toggler{
-    border: none;
-    
-    &:focus{
-        box-shadow: none;
+    .nav-items{
+        width: max-content;
+        
+        button{
+            
+        }
     }
 }

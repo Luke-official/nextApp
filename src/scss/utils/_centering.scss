@@ -1,0 +1,59 @@
+
+// Flex need browsers support
+
+@mixin center($position) {
+
+    @if $position == absolute {
+        position: $position;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+    } 
+
+    @if $position == flex {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @if $position == grid {
+        display: grid;
+        place-items: center;
+    }
+   
+}
+
+@mixin center-horizontal($position) {
+
+    @if $position == absolute {
+        position: $position;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+   
+    @if $position == flex {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@mixin center-vertical($position) {
+
+    @if $position == absolute {
+        position: $position;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    @if $position == flex {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.flex-center{
+    @include center(flex);
+}
+

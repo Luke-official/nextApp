@@ -1,5 +1,31 @@
-.container-page{
-    background-color: $dark-soft;
-    min-height: 100vh;
+.container-page {
+    background: #232526;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    height: 100vh; // Make content scrollable (Y)
     width: 100%;
+
+    .container-content{
+        width: calc(100% - 65.5px);
+        overflow-y: scroll;
+    }
+
+    .content-wrapper {
+        padding: 0 2rem;
+
+        @include respond-above(sm) {
+            padding: 0 4rem;
+        }
+
+        @include respond-above(md) {
+            padding: 0 6rem;
+        }
+
+        @include respond-above(lg) {
+            padding: 0 8rem;
+        }
+    }
+
+    
 }

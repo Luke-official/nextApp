@@ -2,27 +2,27 @@ import HeaderData from "../Components/HeaderData";
 import VerticalSlider from "../Components/verticalSlider";
 
 
-const HomeContainer: React.FC = (username) => {
+const HomeContainer: React.FC = () => {
 
     return (
         <>
-           <section className="py-3">
-               <HeaderData username="Giannex"/>
+           <section className="content-wrapper py-4">
+               <HeaderData username="Giannex" quote="How're you?" level={3}/>
                <div className="w-100">
-                    <VerticalSlider/>
+                    <VerticalSlider />
                </div>
                <div className="row mt-5">
-                   <div className="col">
+                   <div className="col py-3">
                        <div className="card" style={{height: '100px'}}>
                            0
                        </div>
                    </div>
-                   <div className="col">
+                   <div className="col py-3">
                         <div className="card" style={{height: '100px'}}>
                            1
                         </div>
                    </div>
-                   <div className="col">
+                   <div className="col py-3">
                         <div className="card" style={{height: '100px'}}>
                            2
                         </div>

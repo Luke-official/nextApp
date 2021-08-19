@@ -1,26 +1,21 @@
 aside.sidebar{
-    background-color: $dark;
+    background-color: $dark-component;
     height: 100vh;
     width: 70px;
     border-top-right-radius: $primary-radius;
     border-bottom-right-radius: $primary-radius;
     box-shadow: $main-shadow;
-    &>*{
-        .active{
-            background-color: red;
+
+
+    ul.nav{
+        li.nav-item{
+            width: 100%;
+            padding: .5rem 0;
         }
     }
 
-    ul.nav{
-    
-
-        li.nav-item{
-           
-            width: 100%;
-            padding: .5rem 0;
-            a{
-               
-            }
-        }
+    .nav-pills .nav-link.active, .nav-pills .show > .nav-link{
+        background: rgb(116,2,255);
+        background: linear-gradient(90deg, rgba(116,2,255,1) 0%, rgba(150,1,255,1) 51%, rgba(123,0,255,1) 100%);  
     }
 }
