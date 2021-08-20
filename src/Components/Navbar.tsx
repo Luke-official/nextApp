@@ -18,6 +18,7 @@ import { Offcanvas } from "react-bootstrap";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { setNotification } from "../Redux/Action/Notification/notificationActions";
+import useMediaQuery from "../Hooks/useMediaQuery";
 
 const Navbar: React.FC = () => {
 
@@ -40,27 +41,27 @@ const Navbar: React.FC = () => {
     (state: RootState) => state.notification
   );
 
+  const isMobile = useMediaQuery('(min-width: 576px)');
+
   return (
     <>
-      <header className="p-2">
-        <div className="container-fluid d-grid gap-3 align-items-center">
+      <header className={`py-2 px-4 flex-row justify-content-center align-items-center ${!isMobile ? 'position-sticky top-0' : ""}`}>
           <div className="d-flex align-items-center justify-content-start">
-            <SearchBar />
+            {isMobile 
+            ? <SearchBar /> 
+            :   <NavLink className="me-auto" to="/Home">
+                  <Logo />
+                </NavLink>}
             <div className="dropdown dropdown-notification d-flex justify-content-center align-items-center">
               <button
                 className="btn dropdown-toggle bg-transparent"
                 id="notificationsDropdown"
                 data-bs-auto-close="true"
                 data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
+                aria-expanded="false">
                 <NotifyIcon />
               </button>
-              <ul
-                className="dropdown-menu shadow dropdown-menu-lg-end p-4"
-                aria-labelledby="notificationsDropdown"
-              >
-                {}
+              <ul className="dropdown-menu shadow dropdown-menu-lg-end p-4" aria-labelledby="notificationsDropdown">
                 <li className="">
                   {message}
                   <Notification message={message} type={type} />
@@ -70,23 +71,20 @@ const Navbar: React.FC = () => {
             <div className="dropdown dropdown-user d-flex justify-content-center align-items-center">
               <button
                 id="userDropdown"
-                className="d-flex flex-column justify-content-center align-items-center dropdown-toggle p-3"
+                className="d-flex flex-column justify-content-center align-items-center dropdown-toggle"
                 data-bs-auto-close="true"
                 data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
+                aria-expanded="false">
                 <img
                   src="https://github.com/mdo.png"
                   alt="User pic"
                   className="rounded-circle"
                   width="24"
-                  height="24"
-                />
+                  height="24"/>
               </button>
               <ul
                 className="dropdown-menu text-small shadow"
-                aria-labelledby="userDropdown"
-              >
+                aria-labelledby="userDropdown">
                 <li>
                   <a className="dropdown-item" href="##">
                     Settings
@@ -107,23 +105,23 @@ const Navbar: React.FC = () => {
                 </li>
               </ul>
             </div>
-            <button className="btn bg-transparent d-block d-sm-none" onClick={handleShow}>
+            <button id="offcanvasToggle" className="btn bg-transparent d-block d-sm-none" onClick={handleShow}>
               <MenuIcon/>
             </button>
           </div>
-        </div>
       </header>
 
 
       <Offcanvas className='w-100' show={show} onHide={handleClose}>
         <Offcanvas.Header>
             <Logo />
-            <button className="btn bg-transparent" onClick={handleClose}>
+            <button id="offcanvasClose" className="btn bg-transparent" onClick={handleClose}>
               <CloseMenuIcon/>
             </button>
         </Offcanvas.Header>
         <Offcanvas.Body>
           <div className="d-flex flex-column flex-shrink-0 h-100">
+          {!isMobile ? <SearchBar /> : ""}
             <ul className="nav nav-pills nav-flush flex-column">
               <li className="nav-item" onClick={handleClose}>
                 <NavLink
@@ -144,8 +142,7 @@ const Navbar: React.FC = () => {
                   title=""
                   data-bs-toggle="tooltip"
                   data-bs-placement="right"
-                  data-bs-original-title="Dashboard"
-                >
+                  data-bs-original-title="Dashboard">
                   <BookLogo />
                 </NavLink>
               </li>
@@ -157,8 +154,7 @@ const Navbar: React.FC = () => {
                   title=""
                   data-bs-toggle="tooltip"
                   data-bs-placement="right"
-                  data-bs-original-title="Orders"
-                >
+                  data-bs-original-title="Orders">
                   <MovieLogo />
                 </NavLink>
               </li>
@@ -170,8 +166,7 @@ const Navbar: React.FC = () => {
                   title=""
                   data-bs-toggle="tooltip"
                   data-bs-placement="right"
-                  data-bs-original-title="Products"
-                >
+                  data-bs-original-title="Products">
                   <GameLogo />
                 </NavLink>
               </li>
@@ -183,8 +178,7 @@ const Navbar: React.FC = () => {
                   title=""
                   data-bs-toggle="tooltip"
                   data-bs-placement="right"
-                  data-bs-original-title="Customers"
-                >
+                  data-bs-original-title="Customers">
                   <FriendsLogo />
                 </NavLink>
               </li>
@@ -196,8 +190,7 @@ const Navbar: React.FC = () => {
                   title=""
                   data-bs-toggle="tooltip"
                   data-bs-placement="right"
-                  data-bs-original-title="Customers"
-                >
+                  data-bs-original-title="Customers">
                   <ExploreLogo />
                 </NavLink>
               </li>
@@ -208,8 +201,7 @@ const Navbar: React.FC = () => {
                 className="d-flex justify-content-center align-items-center dropdown-toggle p-3"
                 data-bs-auto-close="true"
                 data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
+                aria-expanded="false">
                 <SettingsIcon />
                 Settings
                 {/* <img
@@ -222,8 +214,7 @@ const Navbar: React.FC = () => {
               </button>
               <ul
                 className="dropdown-menu text-small shadow"
-                aria-labelledby="userDropdown"
-              >
+                aria-labelledby="userDropdown">
                 <li>
                   <button
                     className="dropdown-item"

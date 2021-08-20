@@ -25,7 +25,7 @@ const Sidebar: React.FC = () => {
     <aside className="sidebar">
       <div className="d-flex flex-column flex-shrink-0 h-100">
         <a
-          href="/"
+          href="/Home"
           className="d-flex p-3 justify-content-center mb-5"
           title=""
           data-bs-toggle="tooltip"

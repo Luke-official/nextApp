@@ -1,12 +1,9 @@
-
-
-const NotificationList: React.FC = () => {
-
-    return(
-        <>
-
-        </>
-    );
+const NotificationList = () => {
+    return (
+        <div>
+            
+        </div>
+    )
 }
+export default NotificationList
 
-export { NotificationList}

@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-dom";
 import Sidebar from "./Components/Sidebar";
 import HomeContainer from "./Containers/HomeContainer";
 import Landing from "./Pages/Landing";
@@ -28,6 +28,7 @@ const App: React.FC = () => {
               <div className="container-content d-flex flex-column">
                 <Navbar />
                 <div>
+                  <Redirect from='/' to="/Home" />
                   <Route path="/Home" exact component={HomeContainer} />
                   <Route path="/Books" exact component={BooksContainer} />
                   <Route path="/Movies" exact component={MoviesContainer} />

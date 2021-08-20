@@ -1,19 +1,54 @@
-.header{
-    background-color: $dark;
-    z-index: 30;
+header {
+    position: relative;
+    background-color: #0000009c;
+    z-index: 1040;
     width: 100%;
-    height: 60px;
 
-    .nav-items{
-        width: max-content;
+    button {
+        
+        &#offcanvasClose,
+        &#notificationsDropdown,
+        &#userDropdown,
+        &#offcanvasToggle {
+            padding:.3rem .6rem;
+
+            svg {
+                width: 32px;
+                height: 32px;
+            }
+
+            &:focus,
+            &:focus-visible{
+                outline: none;
+                box-shadow: none;
+            }
+        }
+
+        &#offcanvasToggle{
+            padding-right: 0;
+        }
+
+        &#notificationsDropdown{
+            padding-left: 0;
+
+            svg {
+                width: 28px;
+                height: 28px;
+            }
+        }
+    }
+
+    @include respond-above(xs) {
+        background-color: transparent;
+        height: 60px;
     }
 }
 
-.offcanvas{
+.offcanvas {
     background-color: $dark-component;
     z-index: 1055;
 
-    button.btn-close{
-        color: $text-white
+    button.btn-close {
+        color: $text-white;
     }
 }
