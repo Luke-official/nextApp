@@ -13,17 +13,17 @@ const HomeContainer: React.FC = () => {
                </div>
                <div className="row mt-5">
                    <div className="col py-3">
-                       <div className="card" style={{height: '100px'}}>
+                       <div className="card">
                            0
                        </div>
                    </div>
                    <div className="col py-3">
-                        <div className="card" style={{height: '100px'}}>
+                        <div className="card">
                            1
                         </div>
                    </div>
                    <div className="col py-3">
-                        <div className="card" style={{height: '100px'}}>
+                        <div className="card">
                            2
                         </div>
                    </div>

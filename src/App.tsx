@@ -8,17 +8,23 @@ import FriendsContainer from "./Containers/FriendsContainer";
 import GamesContainer from "./Containers/GamesContainer";
 import MoviesContainer from "./Containers/MoviesContainer";
 import Navbar from "./Components/Navbar";
+import useMediaQuery from "./Hooks/useMediaQuery";
 
 const App: React.FC = () => {
+
+  //Super secure authentication method *__*
   const isAuth = true;
+
+  // Check window width to load/unload sidebar
+  const isMobile = useMediaQuery('(min-width: 576px)');
 
   return (
     <Router>
       <Switch>
         {isAuth ? (
           <>
-            <div className="container-page d-flex">
-              <Sidebar />
+            <div className="container-page d-flex flex-column flex-sm-row">
+             { isMobile ? <Sidebar /> : "" }
               <div className="container-content d-flex flex-column">
                 <Navbar />
                 <div>

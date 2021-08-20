@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { setNotification } from "../Redux/Action/notificationActions";
+import { setNotification } from "../Redux/Action/Notification/notificationActions";
 import { useEffect, useRef, useState } from "react";
 import { iNotification } from "../Redux/types";
 

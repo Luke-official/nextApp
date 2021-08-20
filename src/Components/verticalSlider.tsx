@@ -2,10 +2,11 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
 import "swiper/components/pagination/pagination.min.css";
-import SwiperCore, { Pagination } from "swiper/core";
+import SwiperCore, { Autoplay, Pagination } from "swiper/core";
 
 // install Swiper modules
 SwiperCore.use([Pagination]);
+SwiperCore.use([Autoplay]);
 
 const slides = [
   {
@@ -34,10 +35,10 @@ const VerticalSlider: React.FC = () => {
       <Swiper
         className="card home-swiper mt-5"
         direction={"vertical"}
-        pagination={{
-          clickable: true,
-        }}
-      >
+        pagination={{ clickable: true }}
+        autoplay={{ delay: 2000 }}>
+        
+        
         {slides.map((slide, i) => (
           <SwiperSlide
             key={i}

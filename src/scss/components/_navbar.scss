@@ -12,3 +12,12 @@
         }
     }
 }
+
+.offcanvas{
+    background-color: $dark-component;
+    z-index: 1055;
+
+    button.btn-close{
+        color: $text-white
+    }
+}

@@ -1,4 +1,4 @@
-import { SET_NOTIFICATION, NotificationAction, iNotification } from "../types";
+import { SET_NOTIFICATION, NotificationAction, iNotification } from "../../types";
 
 export const setNotification = (notification: iNotification): NotificationAction => {
 

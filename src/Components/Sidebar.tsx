@@ -9,7 +9,7 @@ import { ReactComponent as ExploreLogo } from "../media/icons/travel_explore_whi
 import { ReactComponent as SettingsIcon } from "../media/icons/settings_white_24dp.svg";
 import { useState } from "react";
 import { useDispatch} from "react-redux";
-import { setNotification } from "../Redux/Action/notificationActions";
+import { setNotification } from "../Redux/Action/Notification/notificationActions";
 
 const Sidebar: React.FC = () => {
 
@@ -17,7 +17,7 @@ const Sidebar: React.FC = () => {
   const [counter, setCounter] = useState(1);
 
   const btnClickHandler = (type: 'success' | 'danger' | 'warning') => {
-    dispatch(setNotification({ message: `Notification message ${counter}`, type }));
+    dispatch(setNotification({ message: `Notification ${counter}`, type }));
     setCounter(prevCounter => prevCounter + 1);
   }
 

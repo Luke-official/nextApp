@@ -2,17 +2,33 @@
     background: #232526;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
     height: 100vh; // Make content scrollable (Y)
     width: 100%;
 
     .container-content{
-        width: calc(100% - 65.5px);
+        width: 100%;
         overflow-y: scroll;
+
+        @include respond-above(sm){
+            //Exclude sidebar width
+            width: calc(100% - 65.5px);
+        }
     }
 
     .content-wrapper {
         padding: 0 2rem;
+
+        div.row:nth-child(3){
+            @include flex-col(nowrap, space-between, center);
+            
+            .card{
+                height: 100px;
+            }
+            
+            @include respond-above(sm) {
+                @include flex-row(nowrap, space-between, center);
+            }
+        }
 
         @include respond-above(sm) {
             padding: 0 4rem;
@@ -26,6 +42,4 @@
             padding: 0 8rem;
         }
     }
-
-    
 }
