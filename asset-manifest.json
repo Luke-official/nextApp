@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/Luke-official/React-Dojo/static/css/main.e19e91e9.chunk.css",
+    "main.js": "/Luke-official/React-Dojo/static/js/main.adcbe6db.chunk.js",
+    "main.js.map": "/Luke-official/React-Dojo/static/js/main.adcbe6db.chunk.js.map",
+    "runtime-main.js": "/Luke-official/React-Dojo/static/js/runtime-main.d940d1b3.js",
+    "runtime-main.js.map": "/Luke-official/React-Dojo/static/js/runtime-main.d940d1b3.js.map",
+    "static/css/2.177f7b7c.chunk.css": "/Luke-official/React-Dojo/static/css/2.177f7b7c.chunk.css",
+    "static/js/2.679785cf.chunk.js": "/Luke-official/React-Dojo/static/js/2.679785cf.chunk.js",
+    "static/js/2.679785cf.chunk.js.map": "/Luke-official/React-Dojo/static/js/2.679785cf.chunk.js.map",
+    "static/js/3.b2473b62.chunk.js": "/Luke-official/React-Dojo/static/js/3.b2473b62.chunk.js",
+    "static/js/3.b2473b62.chunk.js.map": "/Luke-official/React-Dojo/static/js/3.b2473b62.chunk.js.map",
+    "index.html": "/Luke-official/React-Dojo/index.html",
+    "static/css/2.177f7b7c.chunk.css.map": "/Luke-official/React-Dojo/static/css/2.177f7b7c.chunk.css.map",
+    "static/css/main.e19e91e9.chunk.css.map": "/Luke-official/React-Dojo/static/css/main.e19e91e9.chunk.css.map",
+    "static/js/2.679785cf.chunk.js.LICENSE.txt": "/Luke-official/React-Dojo/static/js/2.679785cf.chunk.js.LICENSE.txt",
+    "static/media/book_white_24dp.654622b9.svg": "/Luke-official/React-Dojo/static/media/book_white_24dp.654622b9.svg",
+    "static/media/close_white_24dp.604f17ae.svg": "/Luke-official/React-Dojo/static/media/close_white_24dp.604f17ae.svg",
+    "static/media/dashboard_white_24dp.b652da7c.svg": "/Luke-official/React-Dojo/static/media/dashboard_white_24dp.b652da7c.svg",
+    "static/media/menu_white_24dp.f8235882.svg": "/Luke-official/React-Dojo/static/media/menu_white_24dp.f8235882.svg",
+    "static/media/movie_white_24dp.e507809c.svg": "/Luke-official/React-Dojo/static/media/movie_white_24dp.e507809c.svg",
+    "static/media/notifications_white_24dp.0754d6d9.svg": "/Luke-official/React-Dojo/static/media/notifications_white_24dp.0754d6d9.svg",
+    "static/media/people_white_24dp.6d178520.svg": "/Luke-official/React-Dojo/static/media/people_white_24dp.6d178520.svg",
+    "static/media/polymer_white_24dp.89671ef8.svg": "/Luke-official/React-Dojo/static/media/polymer_white_24dp.89671ef8.svg",
+    "static/media/search_white_24dp.23a93868.svg": "/Luke-official/React-Dojo/static/media/search_white_24dp.23a93868.svg",
+    "static/media/settings_white_24dp.e8ee06a6.svg": "/Luke-official/React-Dojo/static/media/settings_white_24dp.e8ee06a6.svg",
+    "static/media/sports_esports_white_24dp.5a404b43.svg": "/Luke-official/React-Dojo/static/media/sports_esports_white_24dp.5a404b43.svg",
+    "static/media/travel_explore_white_24dp.ce64994e.svg": "/Luke-official/React-Dojo/static/media/travel_explore_white_24dp.ce64994e.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d940d1b3.js",
+    "static/css/2.177f7b7c.chunk.css",
+    "static/js/2.679785cf.chunk.js",
+    "static/css/main.e19e91e9.chunk.css",
+    "static/js/main.adcbe6db.chunk.js"
+  ]
+}
