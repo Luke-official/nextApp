@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import Sidebar from "./Components/Sidebar";
 import HomeContainer from "./Containers/HomeContainer";
 import Landing from "./Pages/Landing";
@@ -19,7 +19,7 @@ const App: React.FC = () => {
   const isMobile = useMediaQuery('(min-width: 576px)');
 
   return (
-    <Router>
+    <BrowserRouter>
       <Switch>
         {isAuth ? (
           <>
@@ -43,7 +43,7 @@ const App: React.FC = () => {
           <Landing />
         )}
       </Switch>
-    </Router>
+    </BrowserRouter>
   );
 };
 export default App;

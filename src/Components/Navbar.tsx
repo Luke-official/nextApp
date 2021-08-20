@@ -16,7 +16,7 @@ import Notification from "./Notification";
 import { useDispatch, useSelector } from "react-redux";
 import { Offcanvas } from "react-bootstrap";
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import { setNotification } from "../Redux/Action/Notification/notificationActions";
 import useMediaQuery from "../Hooks/useMediaQuery";
 
@@ -42,14 +42,20 @@ const Navbar: React.FC = () => {
   );
 
   const isMobile = useMediaQuery('(min-width: 576px)');
+  
+  let history = useHistory();
+  const handleHistory = () =>{
+    history.push(`${window.location.pathname}`);
+  }
+  
 
   return (
     <>
-      <header className={`py-2 px-4 flex-row justify-content-center align-items-center ${!isMobile ? 'position-sticky top-0' : ""}`}>
+      <header className={`py-3 px-4 flex-row justify-content-center align-items-center ${!isMobile && 'position-sticky top-0'}`}>
           <div className="d-flex align-items-center justify-content-start">
             {isMobile 
             ? <SearchBar /> 
-            :   <NavLink className="me-auto" to="/Home">
+            :   <NavLink className="me-auto" to="/Home" onClick={handleHistory}>
                   <Logo />
                 </NavLink>}
             <div className="dropdown dropdown-notification d-flex justify-content-center align-items-center">
@@ -126,6 +132,7 @@ const Navbar: React.FC = () => {
               <li className="nav-item" onClick={handleClose}>
                 <NavLink
                   to="/Home"
+                  onClick={handleHistory}
                   className="nav-link py-3"
                   activeClassName="active"
                   data-bs-toggle="tooltip"
@@ -137,9 +144,9 @@ const Navbar: React.FC = () => {
               <li className="nav-item" onClick={handleClose}>
                 <NavLink
                   to="/Books"
+                  onClick={handleHistory}
                   className="nav-link py-3"
                   activeClassName="active"
-                  title=""
                   data-bs-toggle="tooltip"
                   data-bs-placement="right"
                   data-bs-original-title="Dashboard">
@@ -149,9 +156,9 @@ const Navbar: React.FC = () => {
               <li className="nav-item" onClick={handleClose}>
                 <NavLink
                   to="/Movies"
+                  onClick={handleHistory}
                   className="nav-link py-3"
                   activeClassName="active"
-                  title=""
                   data-bs-toggle="tooltip"
                   data-bs-placement="right"
                   data-bs-original-title="Orders">
@@ -161,9 +168,9 @@ const Navbar: React.FC = () => {
               <li className="nav-item" onClick={handleClose}>
                 <NavLink
                   to="/Games"
+                  onClick={handleHistory}
                   className="nav-link py-3"
                   activeClassName="active"
-                  title=""
                   data-bs-toggle="tooltip"
                   data-bs-placement="right"
                   data-bs-original-title="Products">
@@ -173,9 +180,9 @@ const Navbar: React.FC = () => {
               <li className="nav-item" onClick={handleClose}>
                 <NavLink
                   to="/Friends"
+                  onClick={handleHistory}
                   className="nav-link py-3"
                   activeClassName="active"
-                  title=""
                   data-bs-toggle="tooltip"
                   data-bs-placement="right"
                   data-bs-original-title="Customers">
@@ -185,9 +192,9 @@ const Navbar: React.FC = () => {
               <li className="nav-item" onClick={handleClose}>
                 <NavLink
                   to="/Explore"
+                  onClick={handleHistory}
                   className="nav-link py-3"
                   activeClassName="active"
-                  title=""
                   data-bs-toggle="tooltip"
                   data-bs-placement="right"
                   data-bs-original-title="Customers">

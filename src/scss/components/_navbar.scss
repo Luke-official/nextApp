@@ -1,8 +1,18 @@
 header {
     position: relative;
     background-color: #0000009c;
+    border-bottom-left-radius: $primary-radius;
+    border-bottom-right-radius: $primary-radius;
+    box-shadow: $main-shadow;
     z-index: 1040;
     width: 100%;
+
+    @include respond-above(xs) {
+        border-radius: none;
+        box-shadow: none;
+        background-color: transparent;
+        height: 60px;
+    }
 
     button {
         
@@ -38,10 +48,7 @@ header {
         }
     }
 
-    @include respond-above(xs) {
-        background-color: transparent;
-        height: 60px;
-    }
+   
 }
 
 .offcanvas {
